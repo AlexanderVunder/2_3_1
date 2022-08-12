@@ -23,13 +23,13 @@ public class CarServiceImpl implements CarService{
     @Override
     public List<Car> getCarByNumber(int number) {
         List<Car> res = new ArrayList<>();
-        for (int i = 0; i < number; i++) {
-            res.add(carList.get(i));
+        if (number >= 5) {
+            res.addAll(carList);
+        } else {
+            for (int i = 0; i < number; i++) {
+                res.add(carList.get(i));
+            }
         }
         return res;
-    }
-    @Override
-    public List<Car> getAllCars() {
-        return carList;
     }
 }

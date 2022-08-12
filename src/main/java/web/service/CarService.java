@@ -7,5 +7,4 @@ public interface CarService {
 
     List<Car> getCarByNumber(int number);
 
-    List<Car> getAllCars();
 }
