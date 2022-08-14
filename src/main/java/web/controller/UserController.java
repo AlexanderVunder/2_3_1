@@ -19,8 +19,8 @@ public class UserController {
     }
 
     @GetMapping(value = "/users")
-    public String printUsers(@RequestParam(value = "count", defaultValue = "5") Integer count, ModelMap model) {
-        model.addAttribute("users", userService.getUserByNumber(count));
+    public String printUsers(ModelMap model) {
+        model.addAttribute("users", userService.getAllUsers());
         return "users";
     }
 }
